@@ -1,5 +1,4 @@
 import React from 'react';
-import { FlatList } from 'react-native';
 
 import { HighlightCard } from '../../components/HighlighCard';
 import { TransactionCard, TransactionCardProps } from '../../components/TransactionCard';
@@ -17,7 +16,8 @@ import {
   HighlightCards,
   Transactions,
   Title,
-  TransactionList
+  TransactionList,
+  LogoutButton,
 } from './styles'
 
 export interface DataListProps extends TransactionCardProps {
@@ -75,7 +75,9 @@ export function Dashboard() {
               <UserName>Nícolas</UserName>
             </User>
           </UserInfo>
-          <Icon name="power" />
+          <LogoutButton onPress={() => {}}>
+            <Icon name="power" />
+          </LogoutButton>
         </UserWrapper>
       </Header>
       <HighlightCards>
