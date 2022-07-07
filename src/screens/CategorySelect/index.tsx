@@ -55,7 +55,7 @@ export function CategorySelect({
             <Name>{item.name}</Name>
           </Category>
         )}
-        ItemSeparatorComponent={() =>  <Separator />}
+        ItemSeparatorComponent={() => <Separator />}
       />
 
       <Footer>
