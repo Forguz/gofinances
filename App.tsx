@@ -15,6 +15,10 @@ import { AppRoutes } from './src/routes/app.routes';
 import theme from './src/global/styles/theme';
 import { StatusBar } from 'react-native';
 
+import { SignIn } from './src/screens/SignIn'
+
+import { AuthProvider } from './src/hooks/auth';
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular, 
@@ -27,11 +31,13 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <StatusBar barStyle="light-content" />
-        <AppRoutes />
-      </NavigationContainer>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <NavigationContainer>
+          <StatusBar barStyle="light-content" />
+          <SignIn />
+        </NavigationContainer>
+      </ThemeProvider>
+    </AuthProvider>
   )
 }
